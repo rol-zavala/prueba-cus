@@ -2,7 +2,7 @@
 
 ## Definición
 
-Este proyecto consiste en una simulación de una api de tienda contando con los siguientes modulos:
+Este proyecto consiste en una simulación de una api de tienda contando con los siguientes módulos:
 
 - Products
 - User/Auth
@@ -11,6 +11,10 @@ Este proyecto consiste en una simulación de una api de tienda contando con los 
 
 Cabe mencionar que el proyecto se encuentra desplegado y en correcto funcionamiento en [https://prueba-cus.zavalanolasco.com](https://prueba-cus.zavalanolasco.com)
 
+## Collección de PostMan
+
+[Prueba-Cus Endpoiints ](https://prueba-cus.zavalanolasco.com)
+
 ## Diagrama de Infraestructura
 ![Alt text](images/kubernetes.drawio.png)
 
@@ -18,11 +22,11 @@ Cabe mencionar que el proyecto se encuentra desplegado y en correcto funcionamie
 
 ![Alt text](images/image.png)
 
-## Detalle de Modulos
+## Detalle de Módulos
 
 ### Products
 
-Este modulo funciona como un proxy de la api ```https://fakestoreapi.com``` el cual nos entrega una seride productos y su información, las uris correspondientes a este modulo son:
+Este módulo funciona como un proxy de la api ```https://fakestoreapi.com``` el cual nos entrega una seride productos y su información, las uris correspondientes a este módulo son:
 - /products/all
     - Retorna todos los productos.
     - Este endpoint no requiere autenticación.
@@ -32,7 +36,7 @@ Este modulo funciona como un proxy de la api ```https://fakestoreapi.com``` el c
 
 ### User/Auth
 
-Este modulo se encarga de la seguridad del sistema, la cual es programada con spring security, existen dos roles en el sistema los cuales son:
+Este módulo se encarga de la seguridad del sistema, la cual es programada con spring security, existen dos roles en el sistema los cuales son:
 - Admin
 - User
 Los endpoints que requieren autenticación deben enviar su Bearer Token en los headers de la petición.
@@ -168,8 +172,8 @@ Este endpoint se encarga de crear las ordenes, validar que los productos ingresa
 
 ### Account-Money
 
-Este modulo engloba los endpoints relacionados a los pagos.
-Al crear una cuenta en el sistema, esta misma automaticamente cuenta con 0 Lps, por lo que debemos realizar depositos a la cuenta, caso contrario el sistema no permitira realizar pagos.
+Este módulo engloba los endpoints relacionados a los pagos.
+Al crear una cuenta en el sistema, esta misma automáticamente cuenta con 0 Lps, por lo que debemos realizar depositos a la cuenta, caso contrario el sistema no permitira realizar pagos.
 
 #### Endpoins:
 

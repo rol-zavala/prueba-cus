@@ -46,8 +46,4 @@ logging:
 system:
   frontend-host: ${frontend_host}
 
-gcp:
-  project-id: ${project_id}
-  gcs:
-    bucket: ${bucket}
 

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prueba-cus-cm
+data:
+  frontend_host: https://prueba-cus.zavalanolasco.com
+  from_address: no-reply@zavalanolasco.com
+  database_name: test-rol
+  products_api_url: https://fakestoreapi.com
+  secret_key: 023c4025f06a672e5eafa0473e62d85c12d72a729af50f79bc7da5e1e0cd3e7c
+  sendgrid_api_key: 

@@ -1,0 +1,95 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kubernetes.io/change-cause: "Versión 1 - Prueba Cus"
+  name: prueba-cus-svc
+  labels:
+    app: prueba-cus-svc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prueba-cus-svc
+  template:
+    metadata:
+      labels:
+        app: prueba-cus-svc
+    spec:
+      containers:
+        - name: prueba-cus-svc
+          image: razavala/prueba-cus:2
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+            - name: POSTGRES_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: setrass-ecms-configmap
+                  key: postgres-rds-url
+            - name: POSTGRES_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: setrass-ecms-secrets
+                  key: postgres-rds-username
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: setrass-ecms-secrets
+                  key: postgres-rds-password
+            - name: lookups-service.name
+              valueFrom:
+                configMapKeyRef:
+                  name: setrass-ecms-configmap
+                  key: lookups-service.name
+            - name: frontend_host
+              valueFrom:
+                configMapKeyRef:
+                  name: prueba-cus-cm
+                  key: frontend_host
+            - name: from_address
+              valueFrom:
+                configMapKeyRef:
+                  name: prueba-cus-cm
+                  key: from_address
+            - name: database_name
+              valueFrom:
+                configMapKeyRef:
+                  name: prueba-cus-cm
+                  key: database_name
+            - name: products_api_url
+              valueFrom:
+                configMapKeyRef:
+                  name: prueba-cus-cm
+                  key: products_api_url
+            - name: secret_key
+              valueFrom:
+                configMapKeyRef:
+                  name: prueba-cus-cm
+                  key: secret_key
+            - name: sendgrid_api_key
+              valueFrom:
+                configMapKeyRef:
+                  name: prueba-cus-cm
+                  key: sendgrid_api_key
+
+
+           
+
+---
+#SERVICE
+apiVersion: v1
+kind: Service
+metadata:
+  name: prueba-cus-svc
+  labels:
+    app: prueba-cus-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: prueba-cus-svc
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
