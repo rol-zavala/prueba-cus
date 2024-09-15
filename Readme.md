@@ -15,6 +15,13 @@ Cabe mencionar que el proyecto se encuentra desplegado y en correcto funcionamie
 
 [Prueba-Cus Endpoiints ](https://prueba-cus.zavalanolasco.com)
 
+## Imagen de Docker utilizada
+[Contenedor prueba cus ](https://hub.docker.com/r/razavala/prueba-cus/tags)
+
+```bash
+docker pull razavala/prueba-cus
+```
+
 ## Diagrama de Infraestructura
 ![Alt text](images/kubernetes.drawio.png)
 
