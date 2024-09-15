@@ -13,7 +13,7 @@ Cabe mencionar que el proyecto se encuentra desplegado y en correcto funcionamie
 
 ## Collección de PostMan
 
-[Prueba-Cus Endpoiints ](https://prueba-cus.zavalanolasco.com)
+[Prueba-Cus Endpoiints ](https://www.postman.com/lunar-desert-6559/workspace/prueba-cus-rolando-zavala/collection/20804795-915f8fa7-34c5-4d96-975a-48318cf935f9?action=share&creator=20804795&active-environment=20804795-3c9ef3eb-10de-46fa-bca0-deff30c5a66d)
 
 ## Imagen de Docker utilizada
 [Contenedor prueba cus ](https://hub.docker.com/r/razavala/prueba-cus/tags)
