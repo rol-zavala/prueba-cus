@@ -1,0 +1,49 @@
+server:
+  port: 8080
+
+spring:
+  banner:
+    charset: utf-8
+    location: classpath:banner.txt
+  datasource:
+    url: jdbc:postgresql://${postgres_host}:5432/${database_name}
+    username: ${postgres_username}
+    password: ${postgres_password}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 2
+  jpa:
+    hibernate:
+      ddl-auto: validate #create #validate
+    show-sql: true
+  application:
+    name: prueba-cus-service
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+jwt:
+  secret:
+    key: ${secret_key}
+  time:
+    expiration: 86400000
+products:
+  api:
+    url: ${products_api_url}
+
+sendgrid:
+  SENDGRID_API_KEY: ${sendgrid_api_key}
+  from-address: ${from_address}
+
+logging:
+  level:
+    org:
+      springframework:
+        web: debug
+system:
+  frontend-host: ${frontend_host}
+
+
